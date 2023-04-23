@@ -1,16 +1,17 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Spinner from '../components/Spinner'
 
 function App() {
     const navigate = useNavigate()
-
+    const [loading, setLoading] = useState(false)
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     async function registerUser(event) {
         event.preventDefault()
-
+        setLoading(true)
         const response = await fetch('https://strange-worm-slippers.cyclic.app/api/register', {
             method: 'POST',
             headers: {
@@ -30,6 +31,7 @@ function App() {
             navigate('/login')
         }
         else{
+            setLoading(false)
             alert("Email already registered!")
         }
     }
@@ -38,7 +40,8 @@ function App() {
         <div className='container mt-5'>
             <div className="row justify-content-center">
                 <div className="col-md-6">
-                    <div className="card">
+                    {loading && <Spinner/>}
+                   {!loading && <div className="card">
                         <div className="card-header text-center">
                             <h4>Register</h4>
                         </div>
@@ -68,7 +71,7 @@ function App() {
                                 <input className='btn btn-primary' type="submit" value="Register" />
                             </form>
                         </div>
-                    </div>
+                    </div>}
                 </div>
             </div>
         </div>

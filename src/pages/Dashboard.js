@@ -20,7 +20,7 @@ const Dashboard = () => {
             })
     
             const data = await req.json()
-            if (data.length > 2) {
+            if (data.length > 1) {
                 setUsers(data)
             }
             else {
@@ -71,7 +71,7 @@ const Dashboard = () => {
                     <ul className="list-group list-group-flush">
                         {Object.keys(users).map((key) => (
                             <li key={key} className="list-group-item">
-                                {<UserCard name={users[key].name} email={users[key].email} onClick={()=>deleteUser(users[key].email)}/>}
+                                {<UserCard name={users[key].name} email={users[key].email} gameWon={users[key].gameWon} onClick={()=>deleteUser(users[key].email)}/>}
                             </li>
                         ))}
                     </ul>

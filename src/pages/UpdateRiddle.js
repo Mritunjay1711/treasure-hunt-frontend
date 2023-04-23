@@ -5,7 +5,7 @@ const UpdateRiddle = (props) => {
     const [riddle, setRiddle] = useState('');
     const [clue, setClue] = useState('');
     const [answer, setAnswer] = useState('');
-
+    
     async function updateRiddle(event) {
         event.preventDefault();
 

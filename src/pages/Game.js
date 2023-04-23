@@ -45,10 +45,23 @@ const Game = () => {
             setAttempt(0)
 
             alert(story[level - 1].nextLevelClue)
+
+            //User won
             if (level === 5) {
+                const req = await fetch('https://strange-worm-slippers.cyclic.app/api/updateUser', {
+                    method: 'POST',
+                    headers: {
+                        'x-access-token': localStorage.getItem('token')
+                    },
+                })
+
+                const data = await req.json()
+                if(data.status === 'ok')
+                    console.log('Database Updated')
+                else
+                    console.log('Error')
                 navigate(`/win/${name}`)
             }
-
             setLevel(prevCount => prevCount + 1)
             setHintMenu(false)
             setShowHint(false)
@@ -75,11 +88,11 @@ const Game = () => {
             setAttempt(attempt + 1)
         }
     }
-
     useEffect(() => {
-        console.log('Starting game')
         populateRiddle()
-    }, [])// eslint-disable-line react-hooks/exhaustive-deps
+    }, []);// eslint-disable-line react-hooks/exhaustive-deps
+
+
 
     const handleHint = () => {
         setShowHint(true)
