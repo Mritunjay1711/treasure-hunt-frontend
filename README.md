@@ -13,4 +13,7 @@
 * This game has 5 levels where 2 level contains set of riddles without clue which can act as dead end for users.
 * These 2 levels also have some riddles with clue so its upto the algorithm to fetch the riddle randomly with or without clue.
 * Admin can see the list of users and update the riddles in the database
+* Admin can also see how many game a user has won
+* Admin can remove users from database
+* Admin feature can be accessed from navbar{Note: It may not be visible in mobile or small screens}
 * On refreshing the website the game restarts from the level 1
