@@ -27,7 +27,6 @@ function App() {
         if (data.user) {
             localStorage.setItem('token', data.user)
             alert('Login successful')
-            console.log(data.name)
             navigate(`/game/${data.name}`)
         } else {
             setLoading(false)

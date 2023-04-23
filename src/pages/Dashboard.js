@@ -35,7 +35,6 @@ const Dashboard = () => {
                 localStorage.removeItem('token')
                 navigate('/login', { replace: true })
             } else {
-                console.log('Populating quote')
                 populateUsers()
             }
         }
@@ -79,11 +78,11 @@ const Dashboard = () => {
 
                 <div className='col-md-8'>
                     <p><h3>Update Riddles</h3></p>
-                    <Link to="/updatelevel1"><button className='btn btn-primary mx-2'>Level-1</button></Link>
-                    <Link to="/updatelevel2"><button className='btn btn-primary mx-2'>Level-2</button></Link>
-                    <Link to="/updatelevel3"><button className='btn btn-primary mx-2'>Level-3</button></Link>
-                    <Link to="/updatelevel4"><button className='btn btn-primary mx-2'>Level-4</button></Link>
-                    <Link to="/updatelevel5"><button className='btn btn-primary mx-2'>Level-5</button></Link>
+                    <Link to="/updatelevel1"><button className='btn btn-primary mx-2 my-2'>Level-1</button></Link>
+                    <Link to="/updatelevel2"><button className='btn btn-primary mx-2 my-2'>Level-2</button></Link>
+                    <Link to="/updatelevel3"><button className='btn btn-primary mx-2 my-2'>Level-3</button></Link>
+                    <Link to="/updatelevel4"><button className='btn btn-primary mx-2 my-2'>Level-4</button></Link>
+                    <Link to="/updatelevel5"><button className='btn btn-primary mx-2 my-2'>Level-5</button></Link>
                 </div>
             </div>
         </div>

@@ -24,7 +24,6 @@ const Game = () => {
         })
 
         const data = await req.json()
-        console.log(data.answer)
         if (data.status === 'ok') {
             setRiddle(data.riddle);
             setClue(data.clue);

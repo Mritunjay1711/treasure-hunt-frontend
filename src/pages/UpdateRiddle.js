@@ -23,7 +23,6 @@ const UpdateRiddle = (props) => {
         })
 
         const data = await response.json()
-        console.log(data)
         if (data.status === 'ok') {
             alert('Update successful')
             window.location.href = '/dashboard'
@@ -31,8 +30,6 @@ const UpdateRiddle = (props) => {
             alert(data.error)
             window.location.href = '/adminlogin'
         }
-
-        console.log(`Riddle: ${riddle}, Clue: ${clue}, Answer: ${answer}`);
     };
 
     return (
