@@ -79,7 +79,7 @@ const Game = () => {
     useEffect(() => {
         console.log('Starting game')
         populateRiddle()
-    }, [])
+    }, [])// eslint-disable-line react-hooks/exhaustive-deps
 
     const handleHint = () => {
         setShowHint(true)

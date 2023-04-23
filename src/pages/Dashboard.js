@@ -9,24 +9,26 @@ import UserCard from '../components/UserCard'
 const Dashboard = () => {
     const navigate = useNavigate()
     const [users, setUsers] = useState([])
-    async function populateUsers() {
-        const req = await fetch('https://strange-worm-slippers.cyclic.app/api/users', {
-            headers: {
-                'x-access-token': localStorage.getItem('token')
-            },
-        })
-
-        const data = await req.json()
-        if (data.length > 2) {
-            setUsers(data)
-        }
-        else {
-            alert(data.error)
-            navigate('/adminlogin')
-        }
-    }
+    
     useEffect(() => {
         const token = localStorage.getItem('token')
+        async function populateUsers() {
+            const req = await fetch('https://strange-worm-slippers.cyclic.app/api/users', {
+                headers: {
+                    'x-access-token': localStorage.getItem('token')
+                },
+            })
+    
+            const data = await req.json()
+            if (data.length > 2) {
+                setUsers(data)
+            }
+            else {
+                alert(data.error)
+                navigate('/adminlogin')
+            }
+        }
+
         if (token) {
             const user = jwt_decode(token)
             if (!user) {
@@ -37,7 +39,7 @@ const Dashboard = () => {
                 populateUsers()
             }
         }
-    }, [])
+    }, [])// eslint-disable-line react-hooks/exhaustive-deps
 
     const deleteUser = async (email)=>{
         const req = await fetch('https://strange-worm-slippers.cyclic.app/api/deleteuser',{
