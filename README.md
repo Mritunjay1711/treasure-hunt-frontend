@@ -18,3 +18,10 @@
 * Admin can remove users from database
 * Admin feature can be accessed from navbar{Note: It may not be visible in mobile or small screens}
 * On refreshing the website the game restarts from the level 1
+
+
+# Future Enhancements
+* Improve the UI
+* Add points system
+* Add more features for admin
+* Add background music and animations
