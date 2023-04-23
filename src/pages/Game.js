@@ -17,6 +17,7 @@ const Game = () => {
     const [hintMenu, setHintMenu] = useState(false)
 
     async function populateRiddle() {
+        setLoading(true)
         const req = await fetch(`https://strange-worm-slippers.cyclic.app/api/level${level}`, {
             headers: {
                 'x-access-token': localStorage.getItem('token')
@@ -28,6 +29,7 @@ const Game = () => {
             setRiddle(data.riddle);
             setClue(data.clue);
             setAnswer(data.answer);
+            setLoading(false)
         }
         else {
             alert(data.error)
