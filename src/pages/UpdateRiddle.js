@@ -9,7 +9,7 @@ const UpdateRiddle = (props) => {
     async function updateRiddle(event) {
         event.preventDefault();
 
-        const response = await fetch(`http://localhost:1337/api/add${props.level}`, {
+        const response = await fetch(`https://strange-worm-slippers.cyclic.app/api/add${props.level}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
