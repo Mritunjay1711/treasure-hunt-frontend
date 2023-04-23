@@ -1,0 +1,22 @@
+[
+    {
+        "statement": "You are an adventurer in search of a lost treasure. You start your journey in a dense forest. To find the first clue, you must solve the following riddle: ",
+        "nextLevelClue": "You find a map that leads you to the next level."
+    },
+    {
+        "statement": "You arrive at a cave and find an old chest with a riddle written on it. To unlock the chest, you must solve the following riddle: ",
+        "nextLevelClue": "You find a clue to the next level inside the chest."
+    },
+    {
+        "statement": "You reach an ancient temple, and in order to proceed, you must solve a riddle on the temple gate: ",
+        "nextLevelClue": "You find a key that unlocks the door to the next level inside the temple."
+    },
+    {
+        "statement": "You climb a tower and find a locked room. To enter the room, you must solve the following riddle: ",
+        "nextLevelClue": "You find a clue that leads you to the final level inside the room."
+    },
+    {
+        "statement": "You arrive at a hidden location where the treasure is kept. To open the treasure chest, you must solve the following riddle: ",
+        "nextLevelClue": "Congratulations! You open the treasure chest and find the lost treasure!"
+    }
+]
