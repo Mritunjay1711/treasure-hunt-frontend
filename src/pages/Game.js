@@ -17,7 +17,7 @@ const Game = () => {
     const [hintMenu, setHintMenu] = useState(false)
 
     async function populateRiddle() {
-        const req = await fetch(`http://127.0.0.1:1337/api/level${level}`, {
+        const req = await fetch(`https://strange-worm-slippers.cyclic.app/api/level${level}`, {
             headers: {
                 'x-access-token': localStorage.getItem('token')
             },
